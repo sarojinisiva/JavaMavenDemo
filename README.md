@@ -1,23 +1,22 @@
+Here’s an updated and complete `README.md` file including containerization instructions for your Maven-based Java app:
+
+---
+
+### 📄 `README.md`
+
+```markdown
 # Simple Java App
 
-A minimal Java application built with Maven that prints "Hello, world!" to the console.
+A minimal Java application built with Maven that prints "Hello, world!" to the console and can be run in a Docker container.
 
 ---
 
 ## 🧰 Prerequisites
 
-Make sure the following tools are installed on your system:
-
-- **Java JDK** (version 8 or higher)
-- **Apache Maven** (version 3.x)
-- **Git** (optional, for cloning the repository)
-
-### 🔍 Check Versions
-
-```bash
-java -version
-mvn -v
-```
+- Java JDK 8 or higher
+- Apache Maven 3.x
+- Docker (for containerization)
+- Git (optional)
 
 ---
 
@@ -36,13 +35,35 @@ sudo apt install openjdk-17-jdk -y
 sudo apt install maven -y
 ```
 
+### Install Git
+
+```bash
+sudo apt install git -y
+```
+
+
+### Install Docker
+
+```bash
+sudo apt install docker.io -y
+sudo systemctl enable docker
+sudo systemctl start docker
+```
+### 🔍 Check Versions
+
+```bash
+java -version
+mvn -v
+```
+
 ---
 
-## 📁 Project Structure
+## 📂 Project Structure
 
 ```
 simple-java-app/
 ├── pom.xml
+├── Dockerfile
 ├── README.md
 └── src/
     └── main/
@@ -54,30 +75,43 @@ simple-java-app/
 
 ---
 
-## 🚀 How to Run the App
+## 🚀 Run the App Locally
 
-### 1. Clone the Repository
-
-```bash
-git clone https://github.com/your-username/simple-java-app.git
-cd simple-java-app
-```
-
-> 💡 If you're not using Git, manually create the folder structure shown above and add the necessary files.
-
-### 2. Build the Project
+### 1. Build the Project
 
 ```bash
 mvn clean package
 ```
 
-### 3. Run the Application
+### 2. Run the App
 
 ```bash
 java -cp target/simple-java-app-1.0-SNAPSHOT.jar com.example.HelloWorld
 ```
 
-### ✅ Expected Output
+### ✅ Output
+
+```
+Hello, world!
+```
+
+---
+
+## 🐳 Run the App in Docker
+
+### 1. Create the Docker Image
+
+```bash
+docker build -t simple-java-app .
+```
+
+### 2. Run the Container
+
+```bash
+docker run --rm simple-java-app
+```
+
+### ✅ Output
 
 ```
 Hello, world!
@@ -87,11 +121,13 @@ Hello, world!
 
 ## 👨‍💻 Author
 
-Made with ❤️ by **Siva**  
-Feel free to fork or contribute!
+Made with ❤️ by **Siva**
 
 ---
 
 ## 📜 License
 
 This project is open source and available under the [MIT License](LICENSE).
+```
+
+Let me know if you'd like this saved into your project or want it zipped again with the `Dockerfile`.
