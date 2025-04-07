@@ -5,7 +5,7 @@ Here’s an updated and complete `README.md` file including containerization ins
 ### 📄 `README.md`
 
 ```markdown
-# Simple Java App
+# Simple Java App1
 
 A minimal Java application built with Maven that prints "Hello, world!" to the console and can be run in a Docker container.
 
